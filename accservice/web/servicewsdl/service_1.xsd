@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DsService.Server.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/DsService.Server.Entities">
+  <xs:complexType name="SignXmlResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MethodResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SignedXml" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SignXmlResult" nillable="true" type="tns:SignXmlResult"/>
+  <xs:complexType name="MethodResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="ErrorText" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MethodResult" nillable="true" type="tns:MethodResult"/>
+  <xs:complexType name="CommonFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonFault" nillable="true" type="tns:CommonFault"/>
+  <xs:complexType name="VerifyXmlResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MethodResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsValid" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VerifyXmlResult" nillable="true" type="tns:VerifyXmlResult"/>
+  <xs:complexType name="GenericStringResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MethodResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericStringResult" nillable="true" type="tns:GenericStringResult"/>
+  <xs:complexType name="CertificateInfoResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MethodResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="tns:CertificateInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CertificateInfoResult" nillable="true" type="tns:CertificateInfoResult"/>
+  <xs:complexType name="CertificateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FullIssuer" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FullSubject" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Issuer" nillable="true" type="tns:X500NameInfo"/>
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="tns:X500NameInfo"/>
+      <xs:element minOccurs="0" name="ValidFrom" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ValidTo" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CertificateInfo" nillable="true" type="tns:CertificateInfo"/>
+  <xs:complexType name="X500NameInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommonName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Locality" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Organization" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="OrganizationUnit" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="X500NameInfo" nillable="true" type="tns:X500NameInfo"/>
+  <xs:complexType name="ArrayOfSignatureInfoResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SignatureInfoResult" nillable="true" type="tns:SignatureInfoResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSignatureInfoResult" nillable="true" type="tns:ArrayOfSignatureInfoResult"/>
+  <xs:complexType name="SignatureInfoResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MethodResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Certificates" nillable="true" type="tns:ArrayOfCertificateInfo"/>
+          <xs:element minOccurs="0" name="IsValid" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="TimeStampTokens" nillable="true" type="tns:ArrayOfTimeStampTokenInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SignatureInfoResult" nillable="true" type="tns:SignatureInfoResult"/>
+  <xs:complexType name="ArrayOfCertificateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CertificateInfo" nillable="true" type="tns:CertificateInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCertificateInfo" nillable="true" type="tns:ArrayOfCertificateInfo"/>
+  <xs:complexType name="ArrayOfTimeStampTokenInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeStampTokenInfo" nillable="true" type="tns:TimeStampTokenInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeStampTokenInfo" nillable="true" type="tns:ArrayOfTimeStampTokenInfo"/>
+  <xs:complexType name="TimeStampTokenInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Certificate" nillable="true" type="tns:CertificateInfo"/>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ErrorDescription" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeStampTokenInfo" nillable="true" type="tns:TimeStampTokenInfo"/>
+</xs:schema>

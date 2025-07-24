@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="service_1.xsd" namespace="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+  <xs:import schemaLocation="service_1_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:import schemaLocation="service_1_2_3.xsd" namespace="http://schemas.datacontract.org/2004/07/DsService.PackageSignature"/>
+  <xs:element name="SecureSoapSMEV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapSMEVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecureSoapSMEVResult" nillable="true" type="q1:SignXmlResult" xmlns:q1="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommonFault" nillable="true" type="q2:CommonFault" xmlns:q2="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+  <xs:element name="SecureSoapSMEVXades">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapSMEVXadesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecureSoapSMEVXadesResult" nillable="true" type="q3:SignXmlResult" xmlns:q3="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapOIV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapOIVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecureSoapOIVResult" nillable="true" type="q4:SignXmlResult" xmlns:q4="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapOIVXades">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapOIVXadesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecureSoapOIVXadesResult" nillable="true" type="q5:SignXmlResult" xmlns:q5="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapOIVXadesDSS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapOIVXadesDSSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecureSoapOIVXadesDSSResult" nillable="true" type="q6:SignXmlResult" xmlns:q6="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapOIVByCertificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="certificateSerialNumber" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapOIVByCertificateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecureSoapOIVByCertificateResult" nillable="true" type="q7:SignXmlResult" xmlns:q7="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureAppData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureAppDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecureAppDataResult" nillable="true" type="q8:SignXmlResult" xmlns:q8="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignXmlXades">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlToSign" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignXmlXadesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignXmlXadesResult" nillable="true" type="q9:SignXmlResult" xmlns:q9="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlToSign" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignXmlResult" nillable="true" type="q10:SignXmlResult" xmlns:q10="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlToVerify" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyXmlResult" nillable="true" type="q11:VerifyXmlResult" xmlns:q11="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignXmlByXPathXades">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlToSign" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="xPath" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignXmlByXPathXadesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignXmlByXPathXadesResult" nillable="true" type="q12:SignXmlResult" xmlns:q12="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignXmlByXPath">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlToSign" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="xPath" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignXmlByXPathResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignXmlByXPathResult" nillable="true" type="q13:SignXmlResult" xmlns:q13="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentCn">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentCnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCurrentCnResult" nillable="true" type="q14:GenericStringResult" xmlns:q14="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCnByCertificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="certificate" nillable="true" type="xs:base64Binary"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCnByCertificateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCnByCertificateResult" nillable="true" type="q15:GenericStringResult" xmlns:q15="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCertificateInfoByCertificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="certificate" nillable="true" type="xs:base64Binary"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCertificateInfoByCertificateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCertificateInfoByCertificateResult" nillable="true" type="q16:CertificateInfoResult" xmlns:q16="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentCertificateInfo">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentCertificateInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCurrentCertificateInfoResult" nillable="true" type="q17:CertificateInfoResult" xmlns:q17="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSignaturesInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Data" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="base64Signatures" nillable="true" type="q18:ArrayOfstring" xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSignaturesInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSignaturesInfoResult" nillable="true" type="q19:ArrayOfSignatureInfoResult" xmlns:q19="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSignaturesInfoWithAdding">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Data" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSignaturesInfoWithAddingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSignaturesInfoWithAddingResult" nillable="true" type="q20:ArrayOfSignatureInfoResult" xmlns:q20="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetXmlSignaturesInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetXmlSignaturesInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetXmlSignaturesInfoResult" nillable="true" type="q21:ArrayOfSignatureInfoResult" xmlns:q21="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignPackage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Package" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="packageType" type="q22:PackageType" xmlns:q22="http://schemas.datacontract.org/2004/07/DsService.PackageSignature"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignPackageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignPackageResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearSettings">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearSettingsResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceVersion">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetServiceVersionResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Data" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignMessageResult" nillable="true" type="q23:SignXmlResult" xmlns:q23="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignMessageCades">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Data" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignMessageCadesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignMessageCadesResult" nillable="true" type="q24:SignXmlResult" xmlns:q24="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Data" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="signature" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyMessageResult" nillable="true" type="q25:SignatureInfoResult" xmlns:q25="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Data" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="base64ClientSignature" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignStringResult" nillable="true" type="q26:SignXmlResult" xmlns:q26="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignStringWithAdding">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Data" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="base64ClientSignature" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignStringWithAddingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignStringWithAddingResult" nillable="true" type="q27:SignXmlResult" xmlns:q27="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Data" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="stringsToVerify" nillable="true" type="q28:ArrayOfstring" xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyStringResult" nillable="true" type="q29:VerifyXmlResult" xmlns:q29="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyStringWithAdding">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64Data" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyStringWithAddingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyStringWithAddingResult" nillable="true" type="q30:VerifyXmlResult" xmlns:q30="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapEnvelope">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapEnvelopeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecureSoapEnvelopeResult" nillable="true" type="q31:SignXmlResult" xmlns:q31="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapEnvelopeSmev">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="preserveWhitespaces" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecureSoapEnvelopeSmevResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecureSoapEnvelopeSmevResult" nillable="true" type="q32:SignXmlResult" xmlns:q32="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifySoapEnvelope">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifySoapEnvelopeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifySoapEnvelopeResult" nillable="true" type="q33:VerifyXmlResult" xmlns:q33="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyOIV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyOIVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyOIVResult" nillable="true" type="q34:SignatureInfoResult" xmlns:q34="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAppData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAppDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyAppDataResult" nillable="true" type="q35:SignatureInfoResult" xmlns:q35="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifySMEV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapEnvelopeXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifySMEVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifySMEVResult" nillable="true" type="q36:SignatureInfoResult" xmlns:q36="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

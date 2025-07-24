@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="XmlSigningService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="service.xsd" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="service_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="service_1.xsd" namespace="http://schemas.datacontract.org/2004/07/DsService.Server.Entities"/>
+      <xsd:import schemaLocation="service_1_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="service_1_2_3.xsd" namespace="http://schemas.datacontract.org/2004/07/DsService.PackageSignature"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IXmlSigningService_SecureSoapSMEV_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapSMEV"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapSMEV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapSMEVResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapSMEV_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapSMEVXades_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapSMEVXades"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapSMEVXades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapSMEVXadesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapSMEVXades_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIV_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapOIV"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapOIVResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIV_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIVXades_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapOIVXades"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIVXades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapOIVXadesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIVXades_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIVXadesDSS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapOIVXadesDSS"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIVXadesDSS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapOIVXadesDSSResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIVXadesDSS_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIVByCertificate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapOIVByCertificate"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIVByCertificate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapOIVByCertificateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapOIVByCertificate_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureAppData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecureAppData"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureAppData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecureAppDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureAppData_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXmlXades_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignXmlXades"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXmlXades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignXmlXadesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXmlXades_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignXml"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignXmlResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXml_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyXml"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyXmlResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyXml_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXmlByXPathXades_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignXmlByXPathXades"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXmlByXPathXades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignXmlByXPathXadesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXmlByXPathXades_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXmlByXPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignXmlByXPath"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXmlByXPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignXmlByXPathResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignXmlByXPath_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCurrentCn_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentCn"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCurrentCn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentCnResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCurrentCn_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCnByCertificate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCnByCertificate"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCnByCertificate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCnByCertificateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCnByCertificate_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCertificateInfoByCertificate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCertificateInfoByCertificate"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCertificateInfoByCertificate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCertificateInfoByCertificateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCertificateInfoByCertificate_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCurrentCertificateInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentCertificateInfo"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCurrentCertificateInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentCertificateInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetCurrentCertificateInfo_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetSignaturesInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSignaturesInfo"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetSignaturesInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSignaturesInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetSignaturesInfo_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetSignaturesInfoWithAdding_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSignaturesInfoWithAdding"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetSignaturesInfoWithAdding_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSignaturesInfoWithAddingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetSignaturesInfoWithAdding_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetXmlSignaturesInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXmlSignaturesInfo"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetXmlSignaturesInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXmlSignaturesInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetXmlSignaturesInfo_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignPackage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignPackage"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignPackage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignPackageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_ClearSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearSettings"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_ClearSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearSettingsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_ClearSettings_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetServiceVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceVersion"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetServiceVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceVersionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_GetServiceVersion_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignMessage"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignMessageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignMessage_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignMessageCades_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignMessageCades"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignMessageCades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignMessageCadesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignMessageCades_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyMessage"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyMessageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyMessage_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignString_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignString"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignString_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignStringWithAdding_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignStringWithAdding"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignStringWithAdding_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignStringWithAddingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SignStringWithAdding_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyString_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyString"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyString_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyStringWithAdding_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyStringWithAdding"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyStringWithAdding_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyStringWithAddingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyStringWithAdding_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapEnvelope_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapEnvelope"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapEnvelope_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapEnvelopeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapEnvelope_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapEnvelopeSmev_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapEnvelopeSmev"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapEnvelopeSmev_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecureSoapEnvelopeSmevResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_SecureSoapEnvelopeSmev_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifySoapEnvelope_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifySoapEnvelope"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifySoapEnvelope_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifySoapEnvelopeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifySoapEnvelope_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyOIV_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyOIV"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyOIV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyOIVResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyOIV_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyAppData_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAppData"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyAppData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAppDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifyAppData_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifySMEV_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifySMEV"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifySMEV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifySMEVResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IXmlSigningService_VerifySMEV_CommonFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:CommonFault"/>
+  </wsdl:message>
+  <wsdl:portType name="IXmlSigningService">
+    <wsdl:documentation>
+      <summary>Сервис подписи и проверки сообщений.</summary>
+    </wsdl:documentation>
+    <wsdl:operation name="SecureSoapSMEV">
+      <wsdl:documentation>
+        <summary>Добавляем в заголовок Soap пакета подпись по стандарту WS-Security 2004. Для СМЭВ.</summary>
+        <param name="soapEnvelopeXml">SOAP сообщение на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapSMEV" message="tns:IXmlSigningService_SecureSoapSMEV_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapSMEVResponse" message="tns:IXmlSigningService_SecureSoapSMEV_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SecureSoapSMEV" name="CommonFault" message="tns:IXmlSigningService_SecureSoapSMEV_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapSMEVXades">
+      <wsdl:documentation>
+        <summary>Добавляем в заголовок Soap пакета подпись по стандарту WS-Security 2004. Для СМЭВ.</summary>
+        <param name="soapEnvelopeXml">SOAP сообщение на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapSMEVXades" message="tns:IXmlSigningService_SecureSoapSMEVXades_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapSMEVXadesResponse" message="tns:IXmlSigningService_SecureSoapSMEVXades_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SecureSoapSMEVXades" name="CommonFault" message="tns:IXmlSigningService_SecureSoapSMEVXades_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapOIV">
+      <wsdl:documentation>
+        <summary>Добавляем в заголовок Soap пакета подпись по стандарту WS-Security 2004. Для ОИВ.</summary>
+        <param name="soapEnvelopeXml">SOAP сообщение на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapOIV" message="tns:IXmlSigningService_SecureSoapOIV_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapOIVResponse" message="tns:IXmlSigningService_SecureSoapOIV_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SecureSoapOIV" name="CommonFault" message="tns:IXmlSigningService_SecureSoapOIV_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapOIVXades">
+      <wsdl:documentation>
+        <summary>Добавляем в заголовок Soap пакета подпись по стандарту WS-Security 2004 + Xades. Для ОИВ.</summary>
+        <param name="soapEnvelopeXml">SOAP сообщение на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapOIVXades" message="tns:IXmlSigningService_SecureSoapOIVXades_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapOIVXadesResponse" message="tns:IXmlSigningService_SecureSoapOIVXades_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SecureSoapOIVXades" name="CommonFault" message="tns:IXmlSigningService_SecureSoapOIVXades_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapOIVXadesDSS">
+      <wsdl:documentation>
+        <summary>Добавляем в заголовок Soap пакета подпись по стандарту WS-Security 2004 + Xades. Для ОИВ.</summary>
+        <param name="soapEnvelopeXml">SOAP сообщение на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapOIVXadesDSS" message="tns:IXmlSigningService_SecureSoapOIVXadesDSS_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapOIVXadesDSSResponse" message="tns:IXmlSigningService_SecureSoapOIVXadesDSS_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SecureSoapOIVXadesDSS" name="CommonFault" message="tns:IXmlSigningService_SecureSoapOIVXadesDSS_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapOIVByCertificate">
+      <wsdl:documentation>
+        <summary>Добавляем в заголовок Soap пакета подпись по стандарту WS-Security 2004. Для ОИВ.</summary>
+        <param name="soapEnvelopeXml">SOAP сообщение на подпись.</param>
+        <param name="certificateSerialNumber">Серийный номер сертификата.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapOIVByCertificate" message="tns:IXmlSigningService_SecureSoapOIVByCertificate_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapOIVByCertificateResponse" message="tns:IXmlSigningService_SecureSoapOIVByCertificate_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SecureSoapOIVByCertificate" name="CommonFault" message="tns:IXmlSigningService_SecureSoapOIVByCertificate_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SecureAppData">
+      <wsdl:documentation>
+        <summary>Добавляем в подпись AppData.</summary>
+        <param name="xml">SOAP сообщение на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SecureAppData" message="tns:IXmlSigningService_SecureAppData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SecureAppDataResponse" message="tns:IXmlSigningService_SecureAppData_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SecureAppData" name="CommonFault" message="tns:IXmlSigningService_SecureAppData_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SignXmlXades">
+      <wsdl:documentation>
+        <summary>Xades подпись xml документа.</summary>
+        <returns>Результат выполнения операции подписи xml документа.</returns>
+        <param name="xmlToSign">Xml документ на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SignXmlXades" message="tns:IXmlSigningService_SignXmlXades_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SignXmlXadesResponse" message="tns:IXmlSigningService_SignXmlXades_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SignXml" name="CommonFault" message="tns:IXmlSigningService_SignXmlXades_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SignXml">
+      <wsdl:documentation>
+        <summary>Подпись xml документа.</summary>
+        <returns>Результат выполнения операции подписи xml документа.</returns>
+        <param name="xmlToSign">Xml документ на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SignXml" message="tns:IXmlSigningService_SignXml_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SignXmlResponse" message="tns:IXmlSigningService_SignXml_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SignXml" name="CommonFault" message="tns:IXmlSigningService_SignXml_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyXml">
+      <wsdl:documentation>
+        <summary>Проверяем подпись xml документа.</summary>
+        <returns>Результат выполнения операции проверки подписи xml документа.</returns>
+        <param name="xmlToVerify">Xml документ на проверку.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyXml" message="tns:IXmlSigningService_VerifyXml_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyXmlResponse" message="tns:IXmlSigningService_VerifyXml_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/VerifyXml" name="CommonFault" message="tns:IXmlSigningService_VerifyXml_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SignXmlByXPathXades">
+      <wsdl:documentation>
+        <summary>Xades подпись xml документа.</summary>
+        <returns>Результат выполнения операции подписи xml документа.</returns>
+        <param name="xmlToSign">Xml документ на подпись.</param>
+        <param name="xPath">XPath выражение.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SignXmlByXPathXades" message="tns:IXmlSigningService_SignXmlByXPathXades_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SignXmlByXPathXadesResponse" message="tns:IXmlSigningService_SignXmlByXPathXades_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SignXmlByXPath" name="CommonFault" message="tns:IXmlSigningService_SignXmlByXPathXades_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SignXmlByXPath">
+      <wsdl:documentation>
+        <summary>Подпись xml документа.</summary>
+        <returns>Результат выполнения операции подписи xml документа.</returns>
+        <param name="xmlToSign">Xml документ на подпись.</param>
+        <param name="xPath">XPath выражение.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SignXmlByXPath" message="tns:IXmlSigningService_SignXmlByXPath_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SignXmlByXPathResponse" message="tns:IXmlSigningService_SignXmlByXPath_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SignXmlByXPath" name="CommonFault" message="tns:IXmlSigningService_SignXmlByXPath_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentCn">
+      <wsdl:documentation>
+        <summary>Получаем текущий CN.</summary>
+        <returns>Результат выполнения операции.</returns>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/GetCurrentCn" message="tns:IXmlSigningService_GetCurrentCn_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/GetCurrentCnResponse" message="tns:IXmlSigningService_GetCurrentCn_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/GetCurrentCn" name="CommonFault" message="tns:IXmlSigningService_GetCurrentCn_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnByCertificate">
+      <wsdl:documentation>
+        <summary>Получаем CN из сертификата.</summary>
+        <returns>Результат выполнения операции.</returns>
+        <param name="certificate">Сертификат для работы.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/GetCnByCertificate" message="tns:IXmlSigningService_GetCnByCertificate_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/GetCnByCertificateResponse" message="tns:IXmlSigningService_GetCnByCertificate_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/GetCnByCertificate" name="CommonFault" message="tns:IXmlSigningService_GetCnByCertificate_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertificateInfoByCertificate">
+      <wsdl:documentation>
+        <summary>Получаем CertificateInfo из сертификата.</summary>
+        <returns>Результат выполнения операции.</returns>
+        <param name="certificate">Сертификат для работы.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/GetCertificateInfoByCertificate" message="tns:IXmlSigningService_GetCertificateInfoByCertificate_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/GetCertificateInfoByCertificateResponse" message="tns:IXmlSigningService_GetCertificateInfoByCertificate_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/GetCertificateInfoByCertificate" name="CommonFault" message="tns:IXmlSigningService_GetCertificateInfoByCertificate_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentCertificateInfo">
+      <wsdl:documentation>
+        <summary>Получаем текущий CertificateInfo.</summary>
+        <returns>Информация о текущем сертификате.</returns>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/GetCurrentCertificateInfo" message="tns:IXmlSigningService_GetCurrentCertificateInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/GetCurrentCertificateInfoResponse" message="tns:IXmlSigningService_GetCurrentCertificateInfo_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/GetCurrentCertificateInfo" name="CommonFault" message="tns:IXmlSigningService_GetCurrentCertificateInfo_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetSignaturesInfo">
+      <wsdl:documentation>
+        <summary>Получаем информацию о подписях.</summary>
+        <returns>Информация о подписях документа.</returns>
+        <param name="base64Data">Данные в виде Base64 строки.</param>
+        <param name="base64Signatures">Список отделённых подписей в виде Base64 строк.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/GetSignaturesInfo" message="tns:IXmlSigningService_GetSignaturesInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/GetSignaturesInfoResponse" message="tns:IXmlSigningService_GetSignaturesInfo_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/GetSignaturesInfo" name="CommonFault" message="tns:IXmlSigningService_GetSignaturesInfo_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetSignaturesInfoWithAdding">
+      <wsdl:documentation>
+        <summary>Получаем информацию о подписях.</summary>
+        <returns>Информация о подписях документа.</returns>
+        <param name="base64Data">Данные в виде Base64 строки вместе с подписями.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/GetSignaturesInfoWithAdding" message="tns:IXmlSigningService_GetSignaturesInfoWithAdding_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/GetSignaturesInfoWithAddingResponse" message="tns:IXmlSigningService_GetSignaturesInfoWithAdding_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/GetSignaturesInfoWithAdding" name="CommonFault" message="tns:IXmlSigningService_GetSignaturesInfoWithAdding_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlSignaturesInfo">
+      <wsdl:documentation>
+        <summary>Получаем информацию о подписях.</summary>
+        <returns>Информация о подписях документа.</returns>
+        <param name="xml">Данные в виде Xml документа вместе с подписями.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/GetXmlSignaturesInfo" message="tns:IXmlSigningService_GetXmlSignaturesInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/GetXmlSignaturesInfoResponse" message="tns:IXmlSigningService_GetXmlSignaturesInfo_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/GetXmlSignaturesInfo" name="CommonFault" message="tns:IXmlSigningService_GetXmlSignaturesInfo_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SignPackage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SignPackage" message="tns:IXmlSigningService_SignPackage_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SignPackageResponse" message="tns:IXmlSigningService_SignPackage_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ClearSettings">
+      <wsdl:documentation>
+        <summary>Сброс текущих параметров.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/ClearSettings" message="tns:IXmlSigningService_ClearSettings_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/ClearSettingsResponse" message="tns:IXmlSigningService_ClearSettings_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/ClearSettings" name="CommonFault" message="tns:IXmlSigningService_ClearSettings_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceVersion">
+      <wsdl:documentation>
+        <summary>Версия сервиса.</summary>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/GetServiceVersion" message="tns:IXmlSigningService_GetServiceVersion_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/GetServiceVersionResponse" message="tns:IXmlSigningService_GetServiceVersion_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/GetServiceVersion" name="CommonFault" message="tns:IXmlSigningService_GetServiceVersion_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SignMessage">
+      <wsdl:documentation>
+        <summary>Подписываем в формате PKCS#7 Detached</summary>
+        <returns>Отделённая подпись документа.</returns>
+        <param name="base64Data">Документ на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SignMessage" message="tns:IXmlSigningService_SignMessage_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SignMessageResponse" message="tns:IXmlSigningService_SignMessage_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SignMessage" name="CommonFault" message="tns:IXmlSigningService_SignMessage_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SignMessageCades">
+      <wsdl:documentation>
+        <summary>Подписываем в формате PKCS#7 Detached Cades</summary>
+        <returns>Отделённая подпись документа.</returns>
+        <param name="base64Data">Документ на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SignMessageCades" message="tns:IXmlSigningService_SignMessageCades_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SignMessageCadesResponse" message="tns:IXmlSigningService_SignMessageCades_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SignMessageCades" name="CommonFault" message="tns:IXmlSigningService_SignMessageCades_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyMessage">
+      <wsdl:documentation>
+        <summary>Проверка подписи формата PKCS#7 Detached</summary>
+        <returns>Результат выполнения операции проверки подписи.</returns>
+        <param name="base64Data">Документ на проверку.</param>
+        <param name="signature">Подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyMessage" message="tns:IXmlSigningService_VerifyMessage_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyMessageResponse" message="tns:IXmlSigningService_VerifyMessage_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/VerifyMessage" name="CommonFault" message="tns:IXmlSigningService_VerifyMessage_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SignString">
+      <wsdl:documentation>
+        <summary>Подписываем строку.</summary>
+        <returns>Отделённая подпись документа.</returns>
+        <param name="base64Data">Документ на подпись.</param>
+        <param name="base64ClientSignature">Список подписей документа на проверку.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SignString" message="tns:IXmlSigningService_SignString_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SignStringResponse" message="tns:IXmlSigningService_SignString_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SignString" name="CommonFault" message="tns:IXmlSigningService_SignString_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SignStringWithAdding">
+      <wsdl:documentation>
+        <summary>Подписываем строку с добавлением подписи и сертификата к данным.</summary>
+        <returns>Документ с встроенными в него подписями.</returns>
+        <param name="base64Data">Документ на подпись.</param>
+        <param name="base64ClientSignature">Список подписей документа на проверку.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SignStringWithAdding" message="tns:IXmlSigningService_SignStringWithAdding_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SignStringWithAddingResponse" message="tns:IXmlSigningService_SignStringWithAdding_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SignStringWithAdding" name="CommonFault" message="tns:IXmlSigningService_SignStringWithAdding_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyString">
+      <wsdl:documentation>
+        <summary>Проверяем подпись строки.</summary>
+        <returns>Результат выполнения операции проверки подписи.</returns>
+        <param name="base64Data">Документ без подписей.</param>
+        <param name="stringsToVerify">Список отделённых подписей документа.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyString" message="tns:IXmlSigningService_VerifyString_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyStringResponse" message="tns:IXmlSigningService_VerifyString_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/VerifyString" name="CommonFault" message="tns:IXmlSigningService_VerifyString_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyStringWithAdding">
+      <wsdl:documentation>
+        <summary>Проверяем подпись строки с добавлеными подписями и сертификатами.</summary>
+        <returns>Результат выполнения операции проверки подписи.</returns>
+        <param name="base64Data">Документ с встроенными подписями.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyStringWithAdding" message="tns:IXmlSigningService_VerifyStringWithAdding_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyStringWithAddingResponse" message="tns:IXmlSigningService_VerifyStringWithAdding_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/VerifyStringWithAdding" name="CommonFault" message="tns:IXmlSigningService_VerifyStringWithAdding_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapEnvelope">
+      <wsdl:documentation>
+        <summary>Добавляем в заголовок Soap пакета подпись по стандарту WS-Security 2004.</summary>
+        <returns>Подписанное по стандарту WS-Security 2004 SOAP сообщение.</returns>
+        <param name="soapEnvelopeXml">SOAP сообщение на подпись.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapEnvelope" message="tns:IXmlSigningService_SecureSoapEnvelope_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapEnvelopeResponse" message="tns:IXmlSigningService_SecureSoapEnvelope_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SecureSoapEnvelope" name="CommonFault" message="tns:IXmlSigningService_SecureSoapEnvelope_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapEnvelopeSmev">
+      <wsdl:documentation>
+        <summary>Добавляем в заголовок Soap пакета подпись по стандарту WS-Security 2004. Для SMEV</summary>
+        <param name="soapEnvelopeXml">SOAP сообщение на подпись.</param>
+        <param name="preserveWhitespaces">Сохранять пробелы.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapEnvelopeSmev" message="tns:IXmlSigningService_SecureSoapEnvelopeSmev_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/SecureSoapEnvelopeSmevResponse" message="tns:IXmlSigningService_SecureSoapEnvelopeSmev_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/SecureSoapEnvelopeSmev" name="CommonFault" message="tns:IXmlSigningService_SecureSoapEnvelopeSmev_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VerifySoapEnvelope">
+      <wsdl:documentation>
+        <summary>Проверяем подлинность Soap пакета защищенного по стандарту WS-Security 2004</summary>
+        <returns>Результат выполнения операции проверки подлинности Soap пакета защищенного по стандарту WS-Security 2004.</returns>
+        <param name="soapEnvelopeXml">SOAP сообщение на проверку.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/VerifySoapEnvelope" message="tns:IXmlSigningService_VerifySoapEnvelope_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/VerifySoapEnvelopeResponse" message="tns:IXmlSigningService_VerifySoapEnvelope_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/VerifySoapEnvelope" name="CommonFault" message="tns:IXmlSigningService_VerifySoapEnvelope_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOIV">
+      <wsdl:documentation>
+        <summary>Проверяем подлинность Soap пакета подписанного ОИВ</summary>
+        <returns>Результат выполнения операции проверки подлинности Soap пакета.</returns>
+        <param name="soapEnvelopeXml">SOAP сообщение на проверку.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyOIV" message="tns:IXmlSigningService_VerifyOIV_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyOIVResponse" message="tns:IXmlSigningService_VerifyOIV_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/VerifyOIV" name="CommonFault" message="tns:IXmlSigningService_VerifyOIV_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAppData">
+      <wsdl:documentation>
+        <summary>Проверяем подлинность Soap пакета подписанного должностным лицом органа власти.</summary>
+        <returns>Результат выполнения операции проверки подлинности Soap пакета.</returns>
+        <param name="soapEnvelopeXml">SOAP сообщение на проверку.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyAppData" message="tns:IXmlSigningService_VerifyAppData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/VerifyAppDataResponse" message="tns:IXmlSigningService_VerifyAppData_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/VerifySP" name="CommonFault" message="tns:IXmlSigningService_VerifyAppData_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VerifySMEV">
+      <wsdl:documentation>
+        <summary>Проверяем подлинность Soap пакета подписанного СМЭВ</summary>
+        <returns>Результат выполнения операции проверки подлинности Soap пакета.</returns>
+        <param name="soapEnvelopeXml">SOAP сообщение на проверку.</param>
+      </wsdl:documentation>
+      <wsdl:input wsaw:Action="http://tempuri.org/IXmlSigningService/VerifySMEV" message="tns:IXmlSigningService_VerifySMEV_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IXmlSigningService/VerifySMEVResponse" message="tns:IXmlSigningService_VerifySMEV_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/VerifySMEV" name="CommonFault" message="tns:IXmlSigningService_VerifySMEV_CommonFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IXmlSigningService" type="tns:IXmlSigningService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SecureSoapSMEV">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SecureSoapSMEV" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapSMEVXades">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SecureSoapSMEVXades" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapOIV">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SecureSoapOIV" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapOIVXades">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SecureSoapOIVXades" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapOIVXadesDSS">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SecureSoapOIVXadesDSS" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapOIVByCertificate">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SecureSoapOIVByCertificate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SecureAppData">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SecureAppData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignXmlXades">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SignXmlXades" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignXml">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SignXml" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyXml">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/VerifyXml" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignXmlByXPathXades">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SignXmlByXPathXades" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignXmlByXPath">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SignXmlByXPath" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentCn">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/GetCurrentCn" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnByCertificate">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/GetCnByCertificate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertificateInfoByCertificate">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/GetCertificateInfoByCertificate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentCertificateInfo">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/GetCurrentCertificateInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSignaturesInfo">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/GetSignaturesInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSignaturesInfoWithAdding">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/GetSignaturesInfoWithAdding" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlSignaturesInfo">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/GetXmlSignaturesInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignPackage">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SignPackage" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearSettings">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/ClearSettings" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceVersion">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/GetServiceVersion" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignMessage">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SignMessage" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignMessageCades">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SignMessageCades" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyMessage">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/VerifyMessage" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignString">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SignString" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignStringWithAdding">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SignStringWithAdding" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyString">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/VerifyString" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyStringWithAdding">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/VerifyStringWithAdding" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapEnvelope">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SecureSoapEnvelope" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSoapEnvelopeSmev">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/SecureSoapEnvelopeSmev" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifySoapEnvelope">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/VerifySoapEnvelope" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOIV">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/VerifyOIV" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAppData">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/VerifyAppData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifySMEV">
+      <soap:operation soapAction="http://tempuri.org/IXmlSigningService/VerifySMEV" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CommonFault">
+        <soap:fault name="CommonFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XmlSigningService">
+    <wsdl:port name="BasicHttpBinding_IXmlSigningService" binding="tns:BasicHttpBinding_IXmlSigningService">
+      <soap:address location="http://localhost:30175/XmlSigningService/service"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
