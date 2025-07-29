@@ -18,8 +18,11 @@ const Contracts = () => {
     <Routes>
       <Route path="/" element={<ContractsList />} />
       <Route path="/:id" element={<div>Просмотр контракта</div>} />
+      }
       <Route path="/:id/edit" element={<div>Редактирование контракта</div>} />
+      }
       <Route path="/create" element={<div>Создание контракта</div>} />
+      }
     </Routes>
   );
 };

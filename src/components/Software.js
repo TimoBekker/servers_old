@@ -18,6 +18,7 @@ const Software = () => {
     <Routes>
       <Route path="/distributions" element={<SoftwareList />} />
       <Route path="/installed" element={<div>Установленное ПО</div>} />
+      }
       <Route path="/" element={<SoftwareList />} />
     </Routes>
   );

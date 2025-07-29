@@ -189,8 +189,11 @@ const Equipment = () => {
     <Routes>
       <Route path="/" element={<EquipmentList />} />
       <Route path="/:id" element={<div>Просмотр оборудования</div>} />
+      }
       <Route path="/:id/edit" element={<div>Редактирование оборудования</div>} />
+      }
       <Route path="/create" element={<div>Создание оборудования</div>} />
+      }
     </Routes>
   );
 };

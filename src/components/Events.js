@@ -18,8 +18,11 @@ const Events = () => {
     <Routes>
       <Route path="/" element={<EventsList />} />
       <Route path="/:id" element={<div>Просмотр события</div>} />
+      }
       <Route path="/:id/edit" element={<div>Редактирование события</div>} />
+      }
       <Route path="/create" element={<div>Создание события</div>} />
+      }
     </Routes>
   );
 };

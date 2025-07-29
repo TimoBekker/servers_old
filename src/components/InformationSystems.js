@@ -18,8 +18,11 @@ const InformationSystems = () => {
     <Routes>
       <Route path="/" element={<InformationSystemsList />} />
       <Route path="/:id" element={<div>Просмотр ИС</div>} />
+      }
       <Route path="/:id/edit" element={<div>Редактирование ИС</div>} />
+      }
       <Route path="/create" element={<div>Создание ИС</div>} />
+      }
     </Routes>
   );
 };
